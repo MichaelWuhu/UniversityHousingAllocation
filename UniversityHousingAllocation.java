@@ -54,5 +54,7 @@ public class UniversityHousingAllocation {
         // *note mostly going to be if-statements since we want to check for each individual aspect and not else if
 
         sc.close();
+
+        System.out.println("You have " + score + " points.");
     }
 }
