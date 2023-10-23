@@ -9,12 +9,15 @@ public class UniversityHousingAllocation {
         // 30-49 miles away             : +3 pt(s)
         // 20-49 miles away             : +2 pt(s)
         // 0-19 miles away              : +1 pt(s)
+        //
         // on-campus job                 
         // yes                          : +3 pt(s)
         // no                           : +0 pt(s)
+        //
         // financial need                
         // yes                          : +5 pts(s)
         // no                           : +0 pts(s)
+        //
         // disabilities                  
         // yes                          : +3 pt(s)
         // no                           : +0 pt(s)
@@ -50,6 +53,7 @@ public class UniversityHousingAllocation {
         // 3.5 - 4 GPA                  : +4 pt(s)
         // 3.0 - 3.5 GPA                : +2 pt(s)
         // lower than 3                 : +0 pt(s)
+        //
 
         // Scanner for testing... (not really needed??)
         Scanner sc = new Scanner(System.in);
