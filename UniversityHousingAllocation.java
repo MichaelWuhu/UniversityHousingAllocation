@@ -4,20 +4,22 @@ public class UniversityHousingAllocation {
     public static void main(String[] args){
         // FACTORS:
         // Distance from campus         
-        // __ miles/hours away          : +__ pt(s)
-        // __ miles/hours away          : +__ pt(s)
-        // ...
+        // 50+ miles away               : +8 pt(s)
+        // 40-49 miles away             : +5 pt(s)
+        // 30-49 miles away             : +3 pt(s)
+        // 20-49 miles away             : +2 pt(s)
+        // 0-19 miles away              : +1 pt(s)
         // on-campus job                 
-        // yes                          : +1 pt(s)
+        // yes                          : +3 pt(s)
         // no                           : +0 pt(s)
         // financial need                
-        //
-        //
+        // yes                          : +5 pts(s)
+        // no                           : +0 pts(s)
         // disabilities                  
         //
         //
         // first-come first-serve       
-        // 
+        //
         //
         // grade                        
         //
