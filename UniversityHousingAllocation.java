@@ -3,19 +3,20 @@ import java.util.Scanner;
 public class UniversityHousingAllocation {
     public static void main(String[] args){
         // FACTORS:
+        //
         // Distance from campus         
-        // 50+ miles away               : +8 pt(s)
-        // 40-49 miles away             : +5 pt(s)
-        // 30-49 miles away             : +3 pt(s)
+        // 50+ miles away               : +10 pt(s)
+        // 40-49 miles away             : +8 pt(s)
+        // 30-49 miles away             : +5 pt(s)
         // 20-49 miles away             : +2 pt(s)
         // 0-19 miles away              : +1 pt(s)
         //
         // on-campus job                 
-        // yes                          : +3 pt(s)
+        // yes                          : +1 pt(s)
         // no                           : +0 pt(s)
         //
         // financial need                
-        // yes                          : +5 pts(s)
+        // yes                          : +6 pts(s)
         // no                           : +0 pts(s)
         //
         // disabilities                  
@@ -23,35 +24,34 @@ public class UniversityHousingAllocation {
         // no                           : +0 pt(s)
         //
         // first-come first-serve     
-        // day 1-10                     : +5 pt(s)
-        // day 11-20                    : +4 pt(s)
+        // day 1-10                     : +8 pt(s)
+        // day 11-20                    : +5 pt(s)
         // day 21-30                    : +3 pt(s)
         // day 31-60                    : +2 pt(s)
         // day 61-90                    : +1 pt(s)
         // day 91+                      : +0 pt(s)
         //
         // grade      
-        // Freshman                     : +4 pt(s)
-        // Sophomore                    : +3 pt(s)
-        // Junior                       : +2 pt(s)
+        // Freshman                     : +2 pt(s)
+        // Sophomore                    : +2 pt(s)
+        // Junior                       : +1 pt(s)
         // Senior                       : +1 pt(s)               
         //
-        //
         // previously lived on campus   
-        // yes (4 years)                : +4 pt(s)
-        // yes (3 years)                : +3 pt(s)
-        // yes (2 years)                : +2 pt(s)
+        // yes (4 years)                : +2 pt(s)
+        // yes (3 years)                : +2 pt(s)
+        // yes (2 years)                : +1 pt(s)
         // yes (1 years)                : +1 pt(s)
         // no                           : +0 pt(s)
         //
         // student parent
-        // more than 1 child            : +5 pt(s)
-        // 1 child                      : +3 pt(s)
+        // more than 1 child            : +2 pt(s)
+        // 1 child                      : +1 pt(s)
         // no                           : +0 pt(s)
         //
         // high achieving student       
-        // 3.5 - 4 GPA                  : +4 pt(s)
-        // 3.0 - 3.5 GPA                : +2 pt(s)
+        // 3.5 - 4 GPA                  : +2 pt(s)
+        // 3.0 - 3.5 GPA                : +1 pt(s)
         // lower than 3                 : +0 pt(s)
         //
 
