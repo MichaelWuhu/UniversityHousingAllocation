@@ -17,19 +17,26 @@ public class UniversityHousingAllocation {
         //
         //
         // first-come first-serve       
-        // ARDEN ARDEN ARDEN
+        // 
         //
         // grade                        
         //
         //
         // previously lived on campus   
+        // yes (4 years)                : +4 pt(s)
+        // yes (3 years)                : +3 pt(s)
+        // yes (2 years)                : +2 pt(s)
+        // yes (1 years)                : +1 pt(s)
+        // no                           : +0 pt(s)
         //
-        //
-        // student parent               
-        //
+        // student parent
+        // more than 1 child            : +5 pt(s)
+        // 1 child                      : +3 pt(s)
+        // no                           : +0 pt(s)
         //
         // high achieving student       
-        //
+        // 3.5 - 4 GPA                  : +4 pt(s)
+        // 3.0 - 3.5 GPA                : +2 pt(s)
         //
 
         // Scanner for testing... (not really needed??)
