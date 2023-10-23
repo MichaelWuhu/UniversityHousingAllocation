@@ -37,7 +37,7 @@ public class UniversityHousingAllocation {
         // high achieving student       
         // 3.5 - 4 GPA                  : +4 pt(s)
         // 3.0 - 3.5 GPA                : +2 pt(s)
-        //
+        // lower than 3                 : +0 pt(s)
 
         // Scanner for testing... (not really needed??)
         Scanner sc = new Scanner(System.in);
