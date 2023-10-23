@@ -14,7 +14,7 @@ public class UniversityHousingAllocation {
         //
         //
         // disabilities                  
-        //
+        // +3 points if disabled
         //
         // first-come first-serve       
         //
