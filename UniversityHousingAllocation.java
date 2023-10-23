@@ -16,12 +16,22 @@ public class UniversityHousingAllocation {
         // yes                          : +5 pts(s)
         // no                           : +0 pts(s)
         // disabilities                  
+        // yes                          : +3 pt(s)
+        // no                           : +0 pt(s)
         //
+        // first-come first-serve     
+        // day 1-10                     : +5 pt(s)
+        // day 11-20                    : +4 pt(s)
+        // day 21-30                    : +3 pt(s)
+        // day 31-60                    : +2 pt(s)
+        // day 61-90                    : +1 pt(s)
+        // day 91+                      : +0 pt(s)
         //
-        // first-come first-serve       
-        //
-        //
-        // grade                        
+        // grade      
+        // Freshman                     : +4 pt(s)
+        // Sophomore                    : +3 pt(s)
+        // Junior                       : +2 pt(s)
+        // Senior                       : +1 pt(s)               
         //
         //
         // previously lived on campus   
