@@ -47,7 +47,7 @@ public class UniversityHousingAllocation {
         }
 
         if("temp".equals("temp")){ // ditto
-            score += 5; // dittofejofjeo
+            score += 5; // ditto
         }
 
         // add more if statements here
