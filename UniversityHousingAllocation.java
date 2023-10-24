@@ -111,6 +111,7 @@ public class UniversityHousingAllocation {
 
         int score = 0;
 
+        // conditionals to check how many points to add to score based off of student's distance from campus (in miles)
         if (distanceFromCampusInMiles > 50) {
             score += 10;
         } else if (distanceFromCampusInMiles > 40) {
@@ -123,16 +124,24 @@ public class UniversityHousingAllocation {
             score += 1;
         }
 
+        // check if student is working on campus
         if (haveOnCampusJob) {
             score += 1;
         }
 
+        // check if the student has financial need
         if (haveFinancialNeed) {
             score += 6;
         }
 
+        // PUT CONDITIONALS HERE (disabilities, first come first serve, grade level)
+
+
+
+    
+
         // takes the next interger value of user input and sets it to
-        // "yearsLivedOnCAmous"
+        // "yearsLivedOnCampus"
         if (yearsLivedOnCampus == 3 || yearsLivedOnCampus == 4) {
             score += 2;
             // if the user has lived on campus for 3 or 4 years, the score will go up by 2
