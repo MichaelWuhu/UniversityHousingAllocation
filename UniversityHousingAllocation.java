@@ -32,10 +32,11 @@ public class UniversityHousingAllocation {
         // day 91+                      : +0 pt(s)
         //
         // grade      
-        // Freshman                     : +2 pt(s)
-        // Sophomore                    : +2 pt(s)
-        // Junior                       : +1 pt(s)
-        // Senior                       : +1 pt(s)               
+        // Freshman (1)                 : +2 pt(s)
+        // Sophomore (2)                : +2 pt(s)
+        // Junior (3)                   : +1 pt(s)
+        // Senior (4)                   : +1 pt(s)               
+        // Senior+ (4+)                 : +0 pt(s)
         //
         // previously lived on campus   
         // yes (4 years)                : +2 pt(s)
@@ -50,34 +51,64 @@ public class UniversityHousingAllocation {
         // no                           : +0 pt(s)
         //
         // high achieving student       
-        // 3.5 - 4 GPA                  : +2 pt(s)
+        // Above 3.5 GPA                  : +2 pt(s)
         // 3.0 - 3.5 GPA                : +1 pt(s)
         // lower than 3                 : +0 pt(s)
         //
 
         // Scanner for testing... (not really needed??)
         Scanner sc = new Scanner(System.in);
-        String name = sc.nextLine();
-        // add variables as needed e.g. grade level, distance from campus in miles, disabilities, etc.
-        // *note that strings could be difficult for conditionals (since we can't really control what the user will input
-        // so it might be better to use something like a boolean for disabilities 
+        int distanceFromCampusInMiles = sc.nextInt();
+        boolean haveOnCampusJob = sc.nextBoolean();
+        boolean haveFinancialNeed = sc.nextBoolean();
+        boolean haveDisabilities = sc.nextBoolean();
+        int firstComeFirstServe = sc.nextInt();
+        int gradeLevel = sc.nextInt();
+        int yearsLivedOnCampus = sc.nextInt();
+        int numberOfChildren = sc.nextInt();
+        double studentGPA = sc.nextDouble();
 
-        // used to determine how much housing priority the student has
-        int score = 0;
-
-        if("something".equals("something")){ // change to conditional fitting to the category
-            score += 1; // replace with number of points
-        }
-
-        if("temp".equals("temp")){ // ditto
-            score += 5; // ditto
-        }
-
-        // add more if statements here
-        // *note mostly going to be if-statements since we want to check for each individual aspect and not else if
+        
+        int score = calculateHousingScore(distanceFromCampusInMiles, haveOnCampusJob, haveFinancialNeed, 
+        haveDisabilities, firstComeFirstServe, gradeLevel, yearsLivedOnCampus, numberOfChildren, studentGPA); 
+        
 
         sc.close();
 
         System.out.println("You have " + score + " points.");
+    }
+
+    public static int calculateHousingScore(int distanceFromCampusInMiles, boolean haveOnCampusJob, 
+    boolean haveFinancialNeed, boolean haveDisabilities, int firstComeFirstServe, int gradeLevel, 
+    int yearsLivedOnCampus, int numberOfChildren, double studentGPA){
+        
+        int score = 0;
+        
+        // takes the next interger value of user input and sets it to "yearsLivedOnCAmous"
+        if (yearsLivedOnCampus == 3 || yearsLivedOnCampus == 4){
+            score += 2;
+        // if the user has lived on campus for 3 or 4 years, the score will go up by 2
+        } else if (yearsLivedOnCampus == 2 || yearsLivedOnCampus == 1){
+            score += 1;
+        // if the user has lived on campus for 2 or 1 years, the score will go up by 1
+        }
+        // takes the next interger value of user input and sets it to "numberOfChildren"
+        if (numberOfChildren > 1){
+            score += 2;
+            // if the user has more than 1 child, the score will go up by 2
+        } else if (numberOfChildren == 1){
+            score += 1;
+            // if the user has one child, the score will go up by 1
+        }
+        // takes the next float value of user input and sets it to "studentGPA"
+        if (studentGPA > 3.5 ){
+            score += 2;
+            // if the user has a GPA larger than 3.5, the score will go up by 2
+        } else if (studentGPA > 3){
+            score +=1;
+            // if the user has a GPA larger than 3, but below 3.5, the score will go up by 1   
+        }
+        
+        return score;
     }
 }
