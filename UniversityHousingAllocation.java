@@ -59,44 +59,33 @@ public class UniversityHousingAllocation {
         // Scanner for testing... (not really needed??)
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("How far are you from campus? Enter in miles: "); // Prompts user an integer value for
-                                                                           // distanceFromCampusInMiles
+
+        System.out.print("How far are you from campus? Enter in miles: "); // Prompts user an integer value for distanceFromCampusInMiles
         int distanceFromCampusInMiles = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
 
-        System.out.print("Do you have a job on campus? Enter \"true\" or \"false\": "); // Prompts user "true" or
-                                                                                        // "false" for haveOnCampusJob
+        System.out.print("Do you have a job on campus? Enter \"true\" or \"false\": "); // Prompts user "true" or "false" for haveOnCampusJob
         boolean haveOnCampusJob = sc.nextBoolean();
         System.out.println(); // Creates new line to ask next question
 
-        System.out.print("Do you have any financial need? Enter \"true\" or \"false\": "); // Prompts user "true" or
-                                                                                           // "false" for
-                                                                                           // haveFinancialNeed
+        System.out.print("Do you have any financial need? Enter \"true\" or \"false\": "); // Prompts user "true" or "false" for haveFinancialNeed
         boolean haveFinancialNeed = sc.nextBoolean();
         System.out.println(); // Creates new line to ask next question
 
-        System.out.print("Do you have any disabilities? Enter \"true\" or \"false\": "); // Prompts user "true" or
-                                                                                         // "false" for haveDisabilities
+        System.out.print("Do you have any disabilities? Enter \"true\" or \"false\": "); // Prompts user "true" or "false" for haveDisabilities
         boolean haveDisabilities = sc.nextBoolean();
         System.out.println(); // Creates new line to ask next question
 
-        System.out.print("Enter days since the release of this form (First Come First Serve policy): "); // Prompts user
-                                                                                                         // an integer
-                                                                                                         // value for
-                                                                                                         // firstComeFirstServe
+        System.out.print("Enter days since the release of this form (First Come First Serve policy): "); // Prompts user an integer value for firstComeFirstServe
         int firstComeFirstServe = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
 
-        System.out.print("Enter grade level (Freshman = 1, Sophomore = 2, Junior = 3, Senior = 4): "); // Prompts user
-                                                                                                       // an integer
-                                                                                                       // value for
-                                                                                                       // gradeLevel
+        System.out.print("Enter grade level (Freshman = 1, Sophomore = 2, Junior = 3, Senior = 4): "); // Prompts user an integer value for gradeLevel
         int gradeLevel = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
 
-        System.out.print("Enter number of years that you have lived on campus before: "); // Prompts user an integer
-                                                                                          // value for
-                                                                                          // yearsLivedOnCampus
+        System.out.print("Enter number of years that you have lived on campus before: "); // Prompts user an integer value for yearsLivedOnCampus
+
         int yearsLivedOnCampus = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
 
