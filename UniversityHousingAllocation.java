@@ -99,17 +99,26 @@ public class UniversityHousingAllocation {
 
         int score = calculateHousingScore(distanceFromCampusInMiles, haveOnCampusJob, haveFinancialNeed,
                 haveDisabilities, firstComeFirstServe, gradeLevel, yearsLivedOnCampus, numberOfChildren, studentGPA);
-
+        // Initialize an integer "score" and set it equal to the method below with all of the user's inputs
         sc.close();
-
+        // Closes the scanner
         System.out.println("You have " + score + " points.");
+        // Prints new line for the amount of points the user has
     }
+    
+    /**
+      calculateHousingScore method
+      @param 9 inputs given by user including integers, booleans, and a double
+      @return The total housing score of user 
+		        stored in the argument integer.
+     */
 
     public static int calculateHousingScore(int distanceFromCampusInMiles, boolean haveOnCampusJob,
             boolean haveFinancialNeed, boolean haveDisabilities, int firstComeFirstServe, int gradeLevel,
             int yearsLivedOnCampus, int numberOfChildren, double studentGPA) {
-
-        int score = 0;
+        
+        // Initialize score 
+        int score = 0;  
 
         // conditionals to check how many points to add to score based off of student's distance from campus (in miles)
         if (distanceFromCampusInMiles > 50) {
@@ -166,6 +175,6 @@ public class UniversityHousingAllocation {
             // if the user has a GPA larger than 3, but below 3.5, the score will go up by 1
         }
 
-        return score;
+        return score;   
     }
 }
