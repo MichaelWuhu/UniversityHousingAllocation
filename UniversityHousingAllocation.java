@@ -59,32 +59,44 @@ public class UniversityHousingAllocation {
         // Scanner for testing... (not really needed??)
         Scanner sc = new Scanner(System.in);
 
-
-        System.out.print("How far are you from campus? Enter in miles: "); // Prompts user an integer value for distanceFromCampusInMiles
+        System.out.print("How far are you from campus? Enter in miles: "); // Prompts user an integer value for
+                                                                           // distanceFromCampusInMiles
         int distanceFromCampusInMiles = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
 
-        System.out.print("Do you have a job on campus? Enter \"true\" or \"false\": "); // Prompts user "true" or "false" for haveOnCampusJob
+        System.out.print("Do you have a job on campus? Enter \"true\" or \"false\": "); // Prompts user "true" or
+                                                                                        // "false" for haveOnCampusJob
         boolean haveOnCampusJob = sc.nextBoolean();
         System.out.println(); // Creates new line to ask next question
 
-        System.out.print("Do you have any financial need? Enter \"true\" or \"false\": "); // Prompts user "true" or "false" for haveFinancialNeed
+        System.out.print("Do you have any financial need? Enter \"true\" or \"false\": "); // Prompts user "true" or
+                                                                                           // "false" for
+                                                                                           // haveFinancialNeed
         boolean haveFinancialNeed = sc.nextBoolean();
         System.out.println(); // Creates new line to ask next question
 
-        System.out.print("Do you have any disabilities? Enter \"true\" or \"false\": "); // Prompts user "true" or "false" for haveDisabilities
+        System.out.print("Do you have any disabilities? Enter \"true\" or \"false\": "); // Prompts user "true" or
+                                                                                         // "false" for haveDisabilities
         boolean haveDisabilities = sc.nextBoolean();
         System.out.println(); // Creates new line to ask next question
 
-        System.out.print("Enter days since the release of this form (First Come First Serve policy): "); // Prompts user an integer value for firstComeFirstServe
+        System.out.print("Enter days since the release of this form (First Come First Serve policy): "); // Prompts user
+                                                                                                         // an integer
+                                                                                                         // value for
+                                                                                                         // firstComeFirstServe
         int firstComeFirstServe = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
 
-        System.out.print("Enter grade level (Freshman = 1, Sophomore = 2, Junior = 3, Senior = 4): "); // Prompts user an integer value for gradeLevel
+        System.out.print("Enter grade level (Freshman = 1, Sophomore = 2, Junior = 3, Senior = 4): "); // Prompts user
+                                                                                                       // an integer
+                                                                                                       // value for
+                                                                                                       // gradeLevel
         int gradeLevel = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
 
-        System.out.print("Enter number of years that you have lived on campus before: "); // Prompts user an integer value for yearsLivedOnCampus
+        System.out.print("Enter number of years that you have lived on campus before: "); // Prompts user an integer
+                                                                                          // value for
+                                                                                          // yearsLivedOnCampus
 
         int yearsLivedOnCampus = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
@@ -99,28 +111,31 @@ public class UniversityHousingAllocation {
 
         int score = calculateHousingScore(distanceFromCampusInMiles, haveOnCampusJob, haveFinancialNeed,
                 haveDisabilities, firstComeFirstServe, gradeLevel, yearsLivedOnCampus, numberOfChildren, studentGPA);
-        // Initialize an integer "score" and set it equal to the method below with all of the user's inputs
+        // Initialize an integer "score" and set it equal to the method below with all
+        // of the user's inputs
         sc.close();
         // Closes the scanner
         System.out.println("You have " + score + " points.");
         // Prints new line for the amount of points the user has
     }
-    
+
     /**
-      calculateHousingScore method
-      @param 9 inputs given by user including integers, booleans, and a double
-      @return The total housing score of user 
-		        stored in the argument integer.
+     * calculateHousingScore method
+     * 
+     * @param 9 inputs given by user including integers, booleans, and a double
+     * @return The total housing score of user
+     *         stored in the argument integer.
      */
 
     public static int calculateHousingScore(int distanceFromCampusInMiles, boolean haveOnCampusJob,
             boolean haveFinancialNeed, boolean haveDisabilities, int firstComeFirstServe, int gradeLevel,
             int yearsLivedOnCampus, int numberOfChildren, double studentGPA) {
-        
-        // Initialize score 
-        int score = 0;  
 
-        // conditionals to check how many points to add to score based off of student's distance from campus (in miles)
+        // Initialize score
+        int score = 0;
+
+        // conditionals to check how many points to add to score based off of student's
+        // distance from campus (in miles)
         if (distanceFromCampusInMiles > 50) {
             score += 10;
         } else if (distanceFromCampusInMiles > 40) {
@@ -143,11 +158,39 @@ public class UniversityHousingAllocation {
             score += 6;
         }
 
-        // PUT CONDITIONALS HERE (disabilities, first come first serve, grade level)
+        // adds points if user has disability with user input
+        if (haveDisabilities) {
+            score += 3;
+            // if haveDisabilities = true (user has a disability), add 3 to score.
+        }
 
+        // adds points based on how early the student form was filled out (User input is
+        // based on firstComeFirstServe)
+        if (firstComeFirstServe >= 1 && firstComeFirstServe <= 10) {
+            score += 8;
+            // Add 8 points if the user filled out the form within the first 10 days
+        } else if (firstComeFirstServe >= 11 && firstComeFirstServe <= 20) {
+            score += 5;
+            // Add 5 points if the user filled out the form within the first 20 days
+        } else if (firstComeFirstServe >= 21 && firstComeFirstServe <= 30) {
+            score += 3;
+            // Add 3 points if the user filled out the form within the first month
+        } else if (firstComeFirstServe >= 31 && firstComeFirstServe <= 60) {
+            score += 2;
+            // Add 2 points if the user filled out the form within the firsst 2 months
+        } else if (firstComeFirstServe >= 61 && firstComeFirstServe <= 90) {
+            score += 1;
+            // Add 1 point if the user filled out the form within the first 3 months.
+            // Anything more does not get any points.
+        }
 
-
-    
+        if (gradeLevel == 1 || gradeLevel == 2) {
+            score += 2;
+            // if user is a Freshman or a Sophomore, add 2 to score.
+        } else if (gradeLevel == 3 || gradeLevel == 4) {
+            score += 1;
+            // if user is Junior or Senior, add 1 to score.
+        }
 
         // takes the next interger value of user input and sets it to
         // "yearsLivedOnCampus"
@@ -175,6 +218,6 @@ public class UniversityHousingAllocation {
             // if the user has a GPA larger than 3, but below 3.5, the score will go up by 1
         }
 
-        return score;   
+        return score;
     }
 }
