@@ -59,13 +59,14 @@ public class UniversityHousingAllocation {
         // Scanner for testing... (not really needed??)
         Scanner sc = new Scanner(System.in);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> main
         System.out.print("How far are you from campus? Enter in miles: "); // Prompts user an integer value for distanceFromCampusInMiles
         int distanceFromCampusInMiles = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
+        while (distanceFromCampusInMiles <= 0) { // Catches user input that is below 1 mile12312
+            System.out.print("Invalid input. How far are you from campus? Enter in miles: "); // Prompts user an integer value for distanceFromCampusInMiles
+            distanceFromCampusInMiles = sc.nextInt();
+            System.out.println(); // Creates new line to ask next question
+        }
 
         System.out.print("Do you have a job on campus? Enter \"true\" or \"false\": "); // Prompts user "true" or "false" for haveOnCampusJob
         boolean haveOnCampusJob = sc.nextBoolean();
@@ -82,26 +83,48 @@ public class UniversityHousingAllocation {
         System.out.print("Enter days since the release of this form (First Come First Serve policy): "); // Prompts user an integer value for firstComeFirstServe
         int firstComeFirstServe = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
+        while (firstComeFirstServe < 0) { // Catches user input that is below 0 days
+            System.out.print("Invalid input. Enter days since the release of this form (First Come First Serve policy): "); // Prompts user an integer value for firstComeFirstServe
+            firstComeFirstServe = sc.nextInt();
+            System.out.println(); // Creates new line to ask next question
+        }
+
 
         System.out.print("Enter grade level (Freshman = 1, Sophomore = 2, Junior = 3, Senior = 4): "); // Prompts user an integer value for gradeLevel
         int gradeLevel = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
+        while (gradeLevel < 1 || gradeLevel > 4) { // Catches user input that is below 0 or above 4
+            System.out.print("Invalid input. Enter grade level (Freshman = 1, Sophomore = 2, Junior = 3, Senior = 4): "); // Prompts user an integer value for gradeLevel
+            gradeLevel = sc.nextInt();
+            System.out.println(); // Creates new line to ask next question
+        }
 
         System.out.print("Enter number of years that you have lived on campus before: "); // Prompts user an integer value for yearsLivedOnCampus
-<<<<<<< HEAD
-=======
-
->>>>>>> main
         int yearsLivedOnCampus = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
+        while (yearsLivedOnCampus < 0) { // Catches user input that is below 0
+            System.out.print("Invalid input. Enter number of years that you have lived on campus before: "); // Prompts user an integer value for yearsLivedOnCampus
+            yearsLivedOnCampus = sc.nextInt();
+            System.out.println(); // Creates new line to ask next question
+        }
 
         System.out.print("Enter number of children: "); // Prompts user an integer value for numberOfChildren
         int numberOfChildren = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
+        while (numberOfChildren < 0) { // Catches user input that is below 0
+            System.out.print("Invalid input. Enter number of children: "); // Prompts user an integer value for numberOfChildren
+            numberOfChildren = sc.nextInt();
+            System.out.println(); // Creates new line to ask next question
+        }
 
-        System.out.print("Enter GPA (Highschool GPA if Freshman): "); // Prompts user a double value for studentGPA
+        System.out.print("Enter Unweighted GPA (Highschool GPA if Freshman): "); // Prompts user a double value for studentGPA
         double studentGPA = sc.nextDouble();
         System.out.println(); // Creates new line for correct formatting
+        while (studentGPA < 0.0 || studentGPA > 4.0) { // Catches user input that is below 0.0 or above 4.0
+            System.out.print("Invalid input. Enter Unweighted GPA (Highschool GPA if Freshman): "); // Prompts user an integer value for studentGPA
+            studentGPA = sc.nextDouble();
+            System.out.println(); // Creates new line to ask next question
+        }
 
         int score = calculateHousingScore(distanceFromCampusInMiles, haveOnCampusJob, haveFinancialNeed,
                 haveDisabilities, firstComeFirstServe, gradeLevel, yearsLivedOnCampus, numberOfChildren, studentGPA);
@@ -109,6 +132,15 @@ public class UniversityHousingAllocation {
         sc.close();
         // Closes the scanner
         System.out.println("You have " + score + " points.");
+
+        if (score > 0 && score <= 12) {
+            System.out.println("You have low priority."); // Prints low priority if student has score below 12
+        } else if (score >= 13 && score <= 24){
+            System.out.println("You have middle priority."); // Prints middle priority if student has score from 13 to 24
+        } else {
+            System.out.println("You have highest priority."); // Prints highest priority if student has score from 25 to 36 (The highest possible score)
+        }
+        
         // Prints new line for the amount of points the user has
     }
     
@@ -181,7 +213,6 @@ public class UniversityHousingAllocation {
             // if the user has a GPA larger than 3, but below 3.5, the score will go up by 1
         }
 
-<<<<<<< HEAD
         // adds points if user has disability with user input
         if (haveDisabilities) {
             score += 3;
@@ -216,8 +247,5 @@ public class UniversityHousingAllocation {
         
         
         return score;
-=======
-        return score;   
->>>>>>> main
     }
 }
