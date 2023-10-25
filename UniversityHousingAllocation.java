@@ -58,15 +58,42 @@ public class UniversityHousingAllocation {
 
         // Scanner for testing... (not really needed??)
         Scanner sc = new Scanner(System.in);
+
+        System.out.print("How far are you from campus? Enter in miles: "); // Prompts user an integer value for distanceFromCampusInMiles
         int distanceFromCampusInMiles = sc.nextInt();
+        System.out.println(); // Creates new line to ask next question
+
+        System.out.print("Do you have a job on campus? Enter \"true\" or \"false\": "); // Prompts user "true" or "false" for haveOnCampusJob
         boolean haveOnCampusJob = sc.nextBoolean();
+        System.out.println(); // Creates new line to ask next question
+
+        System.out.print("Do you have any financial need? Enter \"true\" or \"false\": "); // Prompts user "true" or "false" for haveFinancialNeed
         boolean haveFinancialNeed = sc.nextBoolean();
+        System.out.println(); // Creates new line to ask next question
+
+        System.out.print("Do you have any disabilities? Enter \"true\" or \"false\": "); // Prompts user "true" or "false" for haveDisabilities
         boolean haveDisabilities = sc.nextBoolean();
+        System.out.println(); // Creates new line to ask next question
+
+        System.out.print("Enter days since the release of this form (First Come First Serve policy): "); // Prompts user an integer value for firstComeFirstServe
         int firstComeFirstServe = sc.nextInt();
+        System.out.println(); // Creates new line to ask next question
+
+        System.out.print("Enter grade level (Freshman = 1, Sophomore = 2, Junior = 3, Senior = 4): "); // Prompts user an integer value for gradeLevel
         int gradeLevel = sc.nextInt();
+        System.out.println(); // Creates new line to ask next question
+
+        System.out.print("Enter number of years that you have lived on campus before: "); // Prompts user an integer value for yearsLivedOnCampus
         int yearsLivedOnCampus = sc.nextInt();
+        System.out.println(); // Creates new line to ask next question
+
+        System.out.print("Enter number of children: "); // Prompts user an integer value for numberOfChildren
         int numberOfChildren = sc.nextInt();
+        System.out.println(); // Creates new line to ask next question
+
+        System.out.print("Enter GPA (Highschool GPA if Freshman): "); // Prompts user a double value for studentGPA
         double studentGPA = sc.nextDouble();
+        System.out.println(); // Creates new line for correct formatting
 
         
         int score = calculateHousingScore(distanceFromCampusInMiles, haveOnCampusJob, haveFinancialNeed, 
@@ -108,6 +135,39 @@ public class UniversityHousingAllocation {
             score +=1;
             // if the user has a GPA larger than 3, but below 3.5, the score will go up by 1   
         }
+
+        // adds points if user has disability with user input
+        if (haveDisabilities) {
+            score += 3;
+            // if haveDisabilities = true (user has a disability), add 3 to score.
+        }
+
+        // adds points based on how early the student form was filled out (User input is based on firstComeFirstServe)
+        if (firstComeFirstServe >= 1 && firstComeFirstServe <= 10) {
+            score += 8;
+            // Add 8 points if the user filled out the form within the first 10 days
+        } else if (firstComeFirstServe >= 11 && firstComeFirstServe <= 20) {
+            score += 5;
+            // Add 5 points if the user filled out the form within the first 20 days
+        } else if (firstComeFirstServe >= 21 && firstComeFirstServe <= 30) {
+            score += 3;
+            // Add 3 points if the user filled out the form within the first month
+        } else if (firstComeFirstServe >= 31 && firstComeFirstServe <= 60) {
+            score += 2;
+            // Add 2 points if the user filled out the form within the firsst 2 months
+        } else if (firstComeFirstServe >= 61 && firstComeFirstServe <= 90) {
+            score += 1;
+            // Add 1 point if the user filled out the form within the first 3 months. Anything more does not get any points.
+        }
+
+        if (gradeLevel == 1 || gradeLevel == 2) {
+            score += 2;
+            // if user is a Freshman or a Sophomore, add 2 to score.
+        } else if (gradeLevel == 3 || gradeLevel == 4) { 
+            score += 1;
+            // if user is Junior or Senior, add 1 to score.
+        }
+        
         
         return score;
     }
