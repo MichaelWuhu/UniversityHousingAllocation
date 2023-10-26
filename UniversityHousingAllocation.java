@@ -32,11 +32,11 @@ public class UniversityHousingAllocation {
         // day 91+ : +0 pt(s)
         //
         // grade
-        // Freshman (1) : +2 pt(s)
-        // Sophomore (2) : +2 pt(s)
-        // Junior (3) : +1 pt(s)
-        // Senior (4) : +1 pt(s)
-        // Senior+ (4+) : +0 pt(s)
+        // Freshman (1) : +1 pt(s)
+        // Sophomore (2) : +1 pt(s)
+        // Junior (3) : +2 pt(s)
+        // Senior (4) : +2 pt(s)
+        // Senior+ (4+) : +2 pt(s)
         //
         // previously lived on campus
         // yes (4 years) : +2 pt(s)
@@ -234,11 +234,11 @@ public class UniversityHousingAllocation {
         }
 
         if (gradeLevel == 1 || gradeLevel == 2) {
-            score += 2;
-            // if user is a Freshman or a Sophomore, add 2 to score.
-        } else if (gradeLevel == 3 || gradeLevel == 4) { 
             score += 1;
-            // if user is Junior or Senior, add 1 to score.
+            // if user is a Freshman or a Sophomore, add 1 to score.
+        } else if (gradeLevel == 3 || gradeLevel >= 4) { 
+            score += 2;
+            // if user is Junior or Senior or Senior+, add 2 to score.
         }
         
         
