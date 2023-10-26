@@ -220,10 +220,10 @@ public class UniversityHousingAllocation {
         }
 
         // takes the next float value of user input and sets it to "studentGPA"
-        if (studentGPA > 3.5) {
+        if (studentGPA >= 3.5) {
             score += 2;
             // if the user has a GPA larger than 3.5, the score will go up by 2
-        } else if (studentGPA > 3) {
+        } else if (studentGPA >= 3) {
             score += 1;
             // if the user has a GPA larger than 3, but below 3.5, the score will go up by 1
         }
