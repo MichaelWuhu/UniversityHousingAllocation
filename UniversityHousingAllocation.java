@@ -62,7 +62,7 @@ public class UniversityHousingAllocation {
         System.out.print("How far are you from campus? Enter in miles: "); // Prompts user an integer value for distanceFromCampusInMiles
         int distanceFromCampusInMiles = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
-        while (distanceFromCampusInMiles <= 0) { // Catches user input that is below 1 mile12312
+        while (distanceFromCampusInMiles <= 0) { // Catches user input that is below 0 miles
             System.out.print("Invalid input. How far are you from campus? Enter in miles: "); // Prompts user an integer value for distanceFromCampusInMiles
             distanceFromCampusInMiles = sc.nextInt();
             System.out.println(); // Creates new line to ask next question
@@ -93,8 +93,8 @@ public class UniversityHousingAllocation {
         System.out.print("Enter grade level (Freshman = 1, Sophomore = 2, Junior = 3, Senior = 4): "); // Prompts user an integer value for gradeLevel
         int gradeLevel = sc.nextInt();
         System.out.println(); // Creates new line to ask next question
-        while (gradeLevel < 1 || gradeLevel > 4) { // Catches user input that is below 0 or above 4
-            System.out.print("Invalid input. Enter grade level (Freshman = 1, Sophomore = 2, Junior = 3, Senior = 4): "); // Prompts user an integer value for gradeLevel
+        while (gradeLevel < 1) { // Catches user input that is below 1
+            System.out.print("Invalid input. Enter grade level (Freshman = 1, Sophomore = 2, Junior = 3, Senior = 4, Senior+ = 5+): "); // Prompts user an integer value for gradeLevel
             gradeLevel = sc.nextInt();
             System.out.println(); // Creates new line to ask next question
         }
@@ -138,7 +138,7 @@ public class UniversityHousingAllocation {
         } else if (score >= 13 && score <= 24){
             System.out.println("You have middle priority."); // Prints middle priority if student has score from 13 to 24
         } else {
-            System.out.println("You have highest priority."); // Prints highest priority if student has score from 25 to 36 (The highest possible score)
+            System.out.println("You have high priority."); // Prints highest priority if student has score from 25 to 36 (The highest possible score)
         }
         
         // Prints new line for the amount of points the user has
@@ -181,12 +181,6 @@ public class UniversityHousingAllocation {
             score += 6;
         }
 
-        // PUT CONDITIONALS HERE (disabilities, first come first serve, grade level)
-
-
-
-    
-
         // takes the next interger value of user input and sets it to
         // "yearsLivedOnCampus"
         if (yearsLivedOnCampus == 3 || yearsLivedOnCampus == 4) {
@@ -196,6 +190,7 @@ public class UniversityHousingAllocation {
             score += 1;
             // if the user has lived on campus for 2 or 1 years, the score will go up by 1
         }
+
         // takes the next interger value of user input and sets it to "numberOfChildren"
         if (numberOfChildren > 1) {
             score += 2;
@@ -204,6 +199,7 @@ public class UniversityHousingAllocation {
             score += 1;
             // if the user has one child, the score will go up by 1
         }
+
         // takes the next float value of user input and sets it to "studentGPA"
         if (studentGPA > 3.5) {
             score += 2;
@@ -218,7 +214,7 @@ public class UniversityHousingAllocation {
             score += 3;
             // if haveDisabilities = true (user has a disability), add 3 to score.
         }
-
+        
         // adds points based on how early the student form was filled out (User input is based on firstComeFirstServe)
         if (firstComeFirstServe >= 1 && firstComeFirstServe <= 10) {
             score += 8;
